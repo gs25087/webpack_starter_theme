@@ -1,0 +1,11 @@
+.wrapper{
+    padding-top: 30px;
+    
+  }
+
+  .container {
+    padding-left: 45px;
+    padding-right: 45px;
+    max-width: 1350px;
+    margin: 0 auto;
+  }

@@ -1,0 +1,36 @@
+
+@define-mixin ipad {
+    @media(min-width: 768px) {
+        @mixin-content
+    }
+}
+
+@define-mixin ipad_p {
+    @media(min-width: 769px) { 
+        @mixin-content
+    }
+}
+
+@define-mixin atSmall {
+    @media(min-width: 1024px) and (min-height: 600px) {
+        @mixin-content
+    }
+}
+
+@define-mixin onlySmall {
+    @media(max-width: 1023px) {
+        @mixin-content
+    }
+}
+
+@define-mixin atLaptop {
+    @media(min-width: 1300px) and (min-height: 600px){
+        @mixin-content
+    }
+}
+
+@define-mixin lgImgFix {
+    @media(min-width: 1350px){
+        @mixin-content
+    }
+}
