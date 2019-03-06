@@ -1,29 +1,55 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+settings = require('./settings');
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+
 module.exports = {
-  entry: ['@babel/polyfill', './src/js/index.js'],
+  entry: ['@babel/polyfill', settings.themeLocation + "src/js/scripts.js"],
   output: {
-    path: path.resolve(__dirname,'dist'),
-    filename: 'js/bundle.js'
+    path: path.resolve(__dirname, settings.themeLocation),
+    filename: 'dist/scripts-bundled.js'
   },
-  devServer:{
-    contentBase: './dist'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.html'
-    })
-  ],
+  mode: 'development',
+  devtool: 'source-map',
   module: {
     rules: [
       {
+        enforce: 'pre',
+        exclude: /node_modules/,
+        test: /\.jsx$/,
+        loader: 'eslint-loader'
+      },
+      {
         test: /\.js$/,
         exclude: /node-modules/,
-        use:{
-          loader: 'babel-loader'
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/env']
+          }
         }
+      },
+      {
+        test: /\.s?css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       }
+    ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '../starter_theme/dist/styles.css' }),
+    new BrowserSyncPlugin({
+      files: '**/*.php',
+      injectChanges: true,
+      proxy: 'starter.theme'
+    })
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin(),
+      new OptimizeCssAssetsPlugin()
     ]
   }
 };
