@@ -1,12 +1,20 @@
 <?php
-// Get rid of emoji
+/////////////// GET RID OF DEFAULT UNWANTED
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 
+function my_deregister_scripts(){
+  wp_deregister_script( 'wp-embed' );
+  }
+  add_action( 'wp_footer', 'my_deregister_scripts' );
+  
+/////////////////////////////////////////////
+
 // Enqueue scripts and styles -->
 function site_files() {
-  wp_enqueue_script('site_js', get_theme_file_uri('/dist/scripts-bundled.js'), NULL, true);
-  wp_enqueue_style('site_main_styles', get_theme_file_uri('/dist/styles.css'), NULL, microtime());
+  wp_register_script('site_js', get_theme_file_uri('/dist/scripts-bundled.js'), NULL, '1.0',true);
+  wp_enqueue_script('site_js');
+  wp_enqueue_style('site_main_styles', get_theme_file_uri('/dist/styles.css'), NULL);
 }
 add_action( 'wp_enqueue_scripts', 'site_files' );
 

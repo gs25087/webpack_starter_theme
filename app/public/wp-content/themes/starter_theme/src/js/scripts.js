@@ -2,20 +2,18 @@
 /****************************************
  * STYLESHEETS
  ****************************************/
-
- /*  Modules */
-import "../css/base/_global.scss"; 
-
-/* Global Variables */
-import "../css/modules/_site-header.scss";  
-
-/* BEMs */
-
+import "normalize.css";
+import "../css/style.scss"; 
 
 /****************************************
  * JS FILES
  ****************************************/
 
-import helloWorld from './modules/Fruit';
+/* NPM Packages */
+//import $ from 'jquery';
+
+/* Modules */
+// import MobileMenu from './modules/MobileMenu';
  
-helloWorld(9); 
+// const mobileMenu = new MobileMenu();
+

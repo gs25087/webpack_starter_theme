@@ -17,12 +17,6 @@ module.exports = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        exclude: /node_modules/,
-        test: /\.jsx$/,
-        loader: 'eslint-loader'
-      },
-      {
         test: /\.js$/,
         exclude: /node-modules/,
         use: {
@@ -34,16 +28,16 @@ module.exports = {
       },
       {
         test: /\.s?css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '../starter_theme/dist/styles.css' }),
+    new MiniCssExtractPlugin({ filename: '../' + settings.themeName + '/dist/styles.css' }),
     new BrowserSyncPlugin({
       files: '**/*.php',
       injectChanges: true,
-      proxy: 'starter.theme'
+      proxy: settings.urlFlywheel
     })
   ],
   optimization: {

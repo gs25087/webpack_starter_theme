@@ -86,42 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./app/public/wp-content/themes/starter_theme/src/css/base/_global.scss":
-/*!******************************************************************************!*\
-  !*** ./app/public/wp-content/themes/starter_theme/src/css/base/_global.scss ***!
-  \******************************************************************************/
+/***/ "./app/public/wp-content/themes/starter_theme/src/css/style.scss":
+/*!***********************************************************************!*\
+  !*** ./app/public/wp-content/themes/starter_theme/src/css/style.scss ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ "./app/public/wp-content/themes/starter_theme/src/css/modules/_site-header.scss":
-/*!**************************************************************************************!*\
-  !*** ./app/public/wp-content/themes/starter_theme/src/css/modules/_site-header.scss ***!
-  \**************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ "./app/public/wp-content/themes/starter_theme/src/js/modules/Fruit.js":
-/*!****************************************************************************!*\
-  !*** ./app/public/wp-content/themes/starter_theme/src/js/modules/Fruit.js ***!
-  \****************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var helloWorld = function helloWorld(params) {
-  console.log(params + 4);
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (helloWorld);
 
 /***/ }),
 
@@ -134,28 +106,25 @@ var helloWorld = function helloWorld(params) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _css_base_global_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/base/_global.scss */ "./app/public/wp-content/themes/starter_theme/src/css/base/_global.scss");
-/* harmony import */ var _css_base_global_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_base_global_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_modules_site_header_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/modules/_site-header.scss */ "./app/public/wp-content/themes/starter_theme/src/css/modules/_site-header.scss");
-/* harmony import */ var _css_modules_site_header_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_modules_site_header_scss__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_Fruit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Fruit */ "./app/public/wp-content/themes/starter_theme/src/js/modules/Fruit.js");
+/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! normalize.css */ "./node_modules/normalize.css/normalize.css");
+/* harmony import */ var normalize_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(normalize_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/style.scss */ "./app/public/wp-content/themes/starter_theme/src/css/style.scss");
+/* harmony import */ var _css_style_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_style_scss__WEBPACK_IMPORTED_MODULE_1__);
 /****************************************
  * STYLESHEETS
  ****************************************/
 
-/*  Modules */
-
-/* Global Variables */
-
-
-/* BEMs */
 
 /****************************************
  * JS FILES
  ****************************************/
 
+/* NPM Packages */
+//import $ from 'jquery';
 
-Object(_modules_Fruit__WEBPACK_IMPORTED_MODULE_2__["default"])(9);
+/* Modules */
+// import MobileMenu from './modules/MobileMenu';
+// const mobileMenu = new MobileMenu();
 
 /***/ }),
 
@@ -10260,6 +10229,17 @@ __webpack_require__(/*! ../modules/web.immediate */ "./node_modules/core-js/modu
 __webpack_require__(/*! ../modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
 
 module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/core-js/modules/_core.js");
+
+/***/ }),
+
+/***/ "./node_modules/normalize.css/normalize.css":
+/*!**************************************************!*\
+  !*** ./node_modules/normalize.css/normalize.css ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
